@@ -1,0 +1,113 @@
+.girid {
+    display: grid;
+
+    grid-template-areas:
+        "p1 p1 p2"
+        "p1 p1 p3"
+        "p4 p5 p6";
+    grid-gap: 6px;
+
+}
+
+.box-1 {
+    grid-area: p1;
+    background-color: rgb(83, 83, 83);
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.box-1::after {
+    content: 'lorem';
+    color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+.box-2 {
+    grid-area: p2;
+    background-color: rgb(83, 83, 83);
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.box-2::after {
+    content: 'lorem';
+    color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.box-3 {
+    grid-area: p3;
+    background-color: rgb(83, 83, 83);
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.box-3::after {
+    content: 'lorem';
+    color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+.box-4 {
+    grid-area: p4;
+    background-color: rgb(83, 83, 83);
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.box-4::after {
+    content: 'lorem';
+    color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+.box-5 {
+    grid-area: p5;
+    background-color: rgb(83, 83, 83);
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.box-5::after {
+    content: 'lorem';
+    color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+.box-6 {
+    grid-area: p6;
+    background-color: rgb(83, 83, 83);
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.box-6::after {
+    content: 'lorem';
+    color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+
+@media(max-width:667px) {
+    .girid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+}
