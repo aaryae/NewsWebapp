@@ -2,7 +2,7 @@
 
 const Navbarhelper = () => {
     return (
-        <div className='py-14 md:py-6'></div>
+        <div className='py-11 md:py-6 '></div>
     )
 }
 

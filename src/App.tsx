@@ -1,23 +1,29 @@
-import Cryptonews from '@components/Cryptonews/Cryptonews'
 import Footer from '@components/Footer/Footer'
-import Googlenews from '@components/Google/Googlenews'
-import Recentnews from '@components/Recentnews/Recentnews'
-import Herosection from '@components/hero/Herosection'
 import Navbar from '@components/navbar/Navbar'
+import About from 'pages/About/About'
+import Contactus from 'pages/Contact/Contactus'
+import Forex from 'pages/Forex/Forex'
+import Home from 'pages/Home/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <div className='max-w-6xl mx-auto p-3 '>
-        <Herosection />
-        <Recentnews />
-        <Cryptonews />
-        <Googlenews />
-      </div>
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contactus />} />
+          <Route path="/forex" element={<Forex />} />
+        </Routes>
+
+
+
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }

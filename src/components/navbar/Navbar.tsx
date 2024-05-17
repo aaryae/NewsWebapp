@@ -1,7 +1,15 @@
-import Navbarhelper from './Navbarhelper'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navbarhelper from './Navbarhelper';
 
 
 const Navbar = () => {
+  const [MenuOn, setMenuOn] = useState(false);
+
+
+  const handleToggle = () => {
+    setMenuOn(!MenuOn);
+  };
   return (
     <>
       <div className='bg-black text-white w-full fixed  z-10 '>
@@ -9,9 +17,18 @@ const Navbar = () => {
 
           <div className=''>
             <ul className='flex flex-wrap justify-center p-3 w-fit'>
-              <li className=''><a className='mx-5 tracking-wider' href="">About</a></li>
-              <li className=''><a className='mx-5 tracking-wider' href="">Advertise</a></li>
-              <li className=''><a className='mx-5 tracking-wider' href="">Contact</a></li>
+              <li className='mx-5 tracking-wider'>
+                <Link to="/">Main</Link>
+              </li>
+              <li className='mx-5 tracking-wider'>
+                <Link to="/about">About</Link>
+              </li>
+              <li className='mx-5 tracking-wider'>
+                <Link to="/forex">Forex</Link>
+              </li>
+              <li className='mx-5 tracking-wider'>
+                <Link to="/contact">contact</Link>
+              </li>
 
             </ul>
           </div>
@@ -24,16 +41,21 @@ const Navbar = () => {
         </div>
       </div>
       <Navbarhelper />
-      <div className='max-w-6xl mx-auto flex flex-wrap justify-between m-3'>
-        <div className='w-fit my-auto text-4xl tracking-wider '>
-          <span className='text-[#26806c] text-bold text-5xl '>A</span>ARYAE
+      <div className="max-w-6xl mx-auto flex flex-wrap justify-between p-2  bg-black text-white lg:bg-transparent lg:text-black">
+        <div className="w-fit my-auto text-4xl tracking-wider cursor-pointer">
+          <Link to='/'>
+
+            <span className="text-[#26806c] font-bold text-5xl">A</span>ARYAE
+          </Link>
         </div>
-        <div>
-          <ul className='flex flex-wrap justify-between py-3 '>
-            <li className=' mx-2'><a className=' tracking-wide' href="">Breaking</a></li>
-            <li className='mx-4'><a className='tracking-wide' href="">Historical</a></li>
-            <li className=' mx-4'><a className='tracking-wide' href="">Google</a></li>
-            <li className=' mx-2 float-right'><a className='tracking-wide' href="">Crypto</a></li>
+        <div className="block lg:hidden p-4 ">
+          <i className="fa-solid fa-bars" onClick={handleToggle} style={{ color: "#26806c" }}></i>        </div>
+        <div className={`w-full lg:text-black text-white text-center  lg:w-auto lg:block bg-[#000000e0] lg:bg-transparent ${MenuOn ? "block" : "hidden"}`}>
+          <ul className="flex flex-col lg:flex-row lg:items-center lg:space-x-4 py-3 ">
+            <li className="mx-2"><a className="tracking-wide hover:text-[#26806c]" href="#">Breaking</a></li>
+            <li className="mx-4"><a className="tracking-wide hover:text-[#26806c]" href="#">Historical</a></li>
+            <li className="mx-4"><a className="tracking-wide hover:text-[#26806c]" href="#">Google</a></li>
+            <li className="mx-2"><a className="tracking-wide hover:text-[#26806c]" href="#">Crypto</a></li>
           </ul>
         </div>
       </div>

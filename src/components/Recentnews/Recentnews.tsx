@@ -77,7 +77,7 @@ const Recentnews = () => {
 
                     </div> */}
                     <div className="text-center">
-                        <button className="border border-white bg-[#26806c] text-white py-4 px-10 hover:text-black hover:border-black tracking-widest" >LoadMore</button>
+                        <button className="border border-white bg-[#26806c] text-white py-4 px-10 hover:bg-[#175a4c] tracking-widest" >LoadMore</button>
                     </div>
                 </div>
             </div>
