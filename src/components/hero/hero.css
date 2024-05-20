@@ -17,12 +17,7 @@
     position: relative;
 }
 
-.box-1::after {
-    content: 'lorem';
-    color: black;
-    position: absolute;
-    bottom: 0;
-}
+
 
 .box-2 {
     grid-area: p2;
@@ -32,12 +27,7 @@
     position: relative;
 }
 
-.box-2::after {
-    content: 'lorem';
-    color: black;
-    position: absolute;
-    bottom: 0;
-}
+
 
 
 .box-3 {
@@ -48,12 +38,7 @@
     position: relative;
 }
 
-.box-3::after {
-    content: 'lorem';
-    color: black;
-    position: absolute;
-    bottom: 0;
-}
+
 
 .box-4 {
     grid-area: p4;
@@ -63,12 +48,7 @@
     position: relative;
 }
 
-.box-4::after {
-    content: 'lorem';
-    color: black;
-    position: absolute;
-    bottom: 0;
-}
+
 
 .box-5 {
     grid-area: p5;
@@ -78,12 +58,7 @@
     position: relative;
 }
 
-.box-5::after {
-    content: 'lorem';
-    color: black;
-    position: absolute;
-    bottom: 0;
-}
+
 
 .box-6 {
     grid-area: p6;
@@ -93,12 +68,6 @@
     position: relative;
 }
 
-.box-6::after {
-    content: 'lorem';
-    color: black;
-    position: absolute;
-    bottom: 0;
-}
 
 
 @media(max-width:667px) {

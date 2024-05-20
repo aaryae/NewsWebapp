@@ -28,7 +28,7 @@ const Contactus = () => {
                             </div>
                         </div>
                         <div className="p-2 w-full">
-                            <button className="flex mx-auto text-white hover:bg-black border-0 py-2 px-8 focus:outline-none bg-[#000000da] hover:tracking-wide rounded text-lg">Button</button>
+                            <button className="flex mx-auto text-white hover:bg-black border-0 py-2 px-8 focus:outline-none bg-[#000000da] hover:tracking-wide rounded text-lg">Submit</button>
                         </div>
                         <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                             <a className="text-[#383880] hover:text-[#972727] hover:underline cursor-pointer">hi@aaryadangol.com.np</a>
