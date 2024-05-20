@@ -26,7 +26,7 @@ const Recentnews = () => {
                 <hr />
             </div>
             <div className='flex justify gap-10 flex-wrap justify-center md:flex-nowrap'>
-                <div className='my-6 w-1/2 group'>
+                <div className='my-6 w-1/2 group cursor-pointer'>
                     <div className='w-fit'>
                         <div className='w-full'>
                             <img src={newsdata?.articles[18]?.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
@@ -36,9 +36,9 @@ const Recentnews = () => {
                         <p className='text-justify'>{newsdata?.articles[18]?.description}</p>
                     </div>
                 </div>
-                <div className='w-1/2 my-6'>
+                <div className='w-1/2 my-6 '>
                     {newsdata?.articles.slice(16, 19).map((article, index) => (
-                        <div key={index} className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap'>
+                        <div key={index} className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer'>
                             <div className='w-full h-[8rem] bg-black flex items-center justify-center'>
                                 <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
 

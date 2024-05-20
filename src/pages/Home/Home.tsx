@@ -7,6 +7,7 @@ import Herosection from '@components/hero/Herosection'
 const Home = () => {
     return (
         <>
+
             <div className='max-w-6xl mx-auto p-3 '>
                 <Herosection />
                 <Recentnews />

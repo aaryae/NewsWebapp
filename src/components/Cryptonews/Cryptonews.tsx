@@ -29,7 +29,7 @@ const Cryptonews = () => {
             <div className="flex flex-wrap justify-center  md:justify-between">
 
                 {newsdata?.articles.slice(0, 3).map((article, index) => (
-                    <div key={index} className='flex flex-col my-5  p-2 w-80 '>
+                    <div key={index} className='flex flex-col my-5  p-2 w-80 cursor-pointer '>
                         <div className='w-full h-[200px] bg-black flex items-center justify-center'>
                             <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
                         </div>

@@ -29,20 +29,22 @@ const Googlenews = () => {
                 <h1 className='absolute w-[10%] border-2 border-[#26806c]'> </h1>
                 <hr />
             </div>
-            <div className="flex flex-wrap justify-center md:flex-nowrap">
+            <div className="flex flex-wrap justify-center  cursor-pointer">
 
-                <div className='max-w-[70%] my-6 flex flex-wrap  '>
+                <div className='w-[70%] my-6 flex flex-wrap justify-start gap-2 md:gap-10 '>
                     {
-                        newsdata?.articles.slice(8, 12).map((article, value) => (
-                            <div key={value} className='flex flex-col my-5  p-2 w-80 items-center justify-center '>
-                                <div className='w-full  bg-black flex items-center justify-center'>
-                                    <img src={article?.urlToImage ?? fallback} alt={fallback} className="object-cover w-full h-full" />
+                        newsdata?.articles.slice(8, 12).map((article, index) => (
+
+                            <div key={index} className='flex flex-col my-5  p-2 max-w-80 cursor-pointer '>
+                                <div className='w-full h-[200px] bg-black flex items-center justify-center'>
+                                    <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
                                 </div>
 
-                                <div>
-                                    <h1 className="my-2">{article?.title}</h1>
-                                    <p className="my-2 font-light">{article?.publishedAt.split("T")[0]}</p>
-                                    <p className="text-justify font-light">{article?.description?.substring(0, 150)}</p>
+
+                                <div  >
+                                    <h1 className="font-bold">{article.title}</h1>
+                                    <p className="my-2 font-light">{article.author} <br /> {article.publishedAt.split("T")[0]}</p>
+                                    <p className="text-justify font-light w-fit">{article.description?.substring(0, 100)}....</p>
                                 </div>
                             </div>
                         ))
@@ -51,7 +53,9 @@ const Googlenews = () => {
 
 
                 </div>
+
                 <Historical />
+
             </div>
         </>
 

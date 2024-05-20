@@ -21,7 +21,7 @@ const Historical = () => {
 
     return (
         <>
-            <div className="flex flex-col">
+            <div className="flex flex-col w-[30%]">
 
                 <div>
                     <h1 className='relative w-fit text-2xl mt-7 font-bold'>HISTORICAL</h1>
@@ -29,10 +29,9 @@ const Historical = () => {
                     <hr />
                 </div>
                 <div className=' my-6  '>
-
                     {
                         newsdata?.articles.slice(0, 3).map((articles, value) => (
-                            <div key={value} className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap'>
+                            <div key={value} className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer'>
                                 <div className='w-40 h-28 bg-black flex items-center justify-center'>
                                     <img src={articles?.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
                                 </div>

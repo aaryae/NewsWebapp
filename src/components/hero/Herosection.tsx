@@ -24,8 +24,8 @@ const Herosection = () => {
 
 
   return (
-    <div className="girid">
-      <div className="box-1 group" >
+    <div className="girid ">
+      <div className="box-1 group cursor-pointer" >
         <img
           src={herodata?.articles[5]?.urlToImage ?? fallback}
           alt="img"
@@ -49,7 +49,7 @@ const Herosection = () => {
       </div>
 
 
-      <div className="box-2">
+      <div className="box-2 cursor-pointer">
         <img src={herodata?.articles[8]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover hover:blur-[2px]" />
         <div
           className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
@@ -65,7 +65,7 @@ const Herosection = () => {
         </div>
 
       </div>
-      <div className="box-3">
+      <div className="box-3 cursor-pointer">
         <img src={herodata?.articles[4]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
         \<div
           className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
@@ -80,7 +80,7 @@ const Herosection = () => {
           </div>
         </div>
       </div>
-      <div className="box-4">
+      <div className="box-4 cursor-pointer">
         <img src={herodata?.articles[10]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
         <div
           className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
@@ -95,7 +95,7 @@ const Herosection = () => {
           </div>
         </div>
       </div>
-      <div className="box-5">
+      <div className="box-5 cursor-pointer">
         <img src={herodata?.articles[11]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover hover:blur-[2px]" />
         <div
           className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
@@ -110,7 +110,7 @@ const Herosection = () => {
           </div>
         </div>
       </div>
-      <div className="box-6">
+      <div className="box-6 cursor-pointer">
         <img src={herodata?.articles[12]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
         <div
           className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
