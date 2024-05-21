@@ -10,8 +10,14 @@ export interface NewsInterface {
     title: string;
     description: string | null;
     url: string;
-    urlToImage: string | null; // Change here to make it nullable
+    urlToImage: string | null; 
     publishedAt: string;
     content: string | null;
   }[];
+}
+
+export interface ForexInterface{
+  conversion_rates: {
+    [key: string]: number;
+};
 }

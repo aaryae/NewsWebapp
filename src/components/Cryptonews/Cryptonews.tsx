@@ -9,7 +9,7 @@ const Cryptonews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/everything?q=crypto&from=2024-04-20&sortBy=publishedAt&apiKey=fb6e45d574924ffca24c02b0d8fd3798`)
+                const response = await fetch(`https://newsapi.org/v2/everything?q=money&from=2024-04-20&sortBy=publishedAt&apiKey=227258dc557c446eb1ba568efbdff663`)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
@@ -22,13 +22,13 @@ const Cryptonews = () => {
     return (
         <>
             <div>
-                <h1 className='relative w-fit text-2xl mt-7 font-bold'>CRYPTO NEWS</h1>
+                <h1 className='relative w-fit text-2xl mt-7 font-bold' id="crypto">CRYPTO NEWS</h1>
                 <h1 className='absolute w-[10%] border-2 border-[#26806c]'> </h1>
                 <hr />
             </div>
             <div className="flex flex-wrap justify-center  md:justify-between">
 
-                {newsdata?.articles.slice(0, 3).map((article, index) => (
+                {newsdata?.articles?.slice(0, 3)?.map((article, index) => (
                     <div key={index} className='flex flex-col my-5  p-2 w-80 cursor-pointer '>
                         <div className='w-full h-[200px] bg-black flex items-center justify-center'>
                             <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
@@ -46,6 +46,7 @@ const Cryptonews = () => {
 
 
             </div>
+
         </>
     )
 }

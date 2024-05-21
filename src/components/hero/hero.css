@@ -1,12 +1,10 @@
 .girid {
     display: grid;
-
     grid-template-areas:
         "p1 p1 p2"
         "p1 p1 p3"
         "p4 p5 p6";
     grid-gap: 6px;
-
 }
 
 .box-1 {
@@ -17,8 +15,6 @@
     position: relative;
 }
 
-
-
 .box-2 {
     grid-area: p2;
     background-color: rgb(83, 83, 83);
@@ -26,9 +22,6 @@
     width: 100%;
     position: relative;
 }
-
-
-
 
 .box-3 {
     grid-area: p3;
@@ -78,5 +71,6 @@
         padding: 20px;
         justify-content: center;
         align-items: center;
+        padding-top: 13rem;
     }
 }

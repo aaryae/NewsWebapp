@@ -29,19 +29,24 @@ const Navbar = () => {
               <li className='mx-5 tracking-wider'>
                 <Link to="/contact">contact</Link>
               </li>
-
             </ul>
           </div>
           <div className='flex gap-4 p-3 justify-center my-auto '>
-            <i className="fa-brands fa-facebook" style={{ color: "#ffffff" }}></i>
-            <i className="fa-brands fa-x-twitter" style={{ color: "#ffffff" }}></i>
-            <i className="fa-brands fa-instagram" style={{ color: "#ffffff" }}></i>
+            <a href="https://www.facebook.com/">
+              <i className="fa-brands fa-facebook" style={{ color: "#ffffff" }}></i>
+            </a>
+            <a href="https://www.twitter.com/">
+              <i className="fa-brands fa-x-twitter" style={{ color: "#ffffff" }}></i>
+            </a>
+            <a href="https://www.instagram.com/">
+              <i className="fa-brands fa-instagram" style={{ color: "#ffffff" }}></i>
+            </a>
 
           </div>
         </div>
       </div>
       <Navbarhelper />
-      <div className="max-w-6xl mx-auto flex flex-wrap justify-between p-2  bg-black text-white lg:bg-transparent lg:text-black">
+      <div className="max-w-6xl mx-auto flex flex-wrap justify-between p-2  bg-black text-white lg:bg-transparent lg:text-black mb-10">
         <div className="w-fit my-auto text-4xl tracking-wider cursor-pointer">
           <Link to='/'>
 
@@ -53,9 +58,9 @@ const Navbar = () => {
         <div className={`w-full lg:text-black text-white text-center  lg:w-auto lg:block bg-[#000000e0] lg:bg-transparent ${MenuOn ? "block" : "hidden"}`}>
           <ul className="flex flex-col lg:flex-row lg:items-center lg:space-x-4 py-3 ">
             <li className="mx-2"><a className="tracking-wide hover:text-[#26806c]" href="#">Breaking</a></li>
-            <li className="mx-4"><a className="tracking-wide hover:text-[#26806c]" href="#">Historical</a></li>
-            <li className="mx-4"><a className="tracking-wide hover:text-[#26806c]" href="#">Google</a></li>
-            <li className="mx-2"><a className="tracking-wide hover:text-[#26806c]" href="#">Crypto</a></li>
+            <li className="mx-4"><a className="tracking-wide hover:text-[#26806c]" href="#historical">Historical</a></li>
+            <li className="mx-4"><a className="tracking-wide hover:text-[#26806c]" href="#google">Google</a></li>
+            <li className="mx-2"><a className="tracking-wide hover:text-[#26806c]" href="#crypto">Crypto</a></li>
           </ul>
         </div>
       </div>

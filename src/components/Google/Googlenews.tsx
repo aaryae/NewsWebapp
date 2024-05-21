@@ -25,15 +25,15 @@ const Googlenews = () => {
 
 
             <div>
-                <h1 className='relative w-fit text-2xl mt-7 font-bold'>GOOGLE NEWS</h1>
+                <h1 className='relative w-fit text-2xl mt-7 font-bold' id="google">GOOGLE NEWS</h1>
                 <h1 className='absolute w-[10%] border-2 border-[#26806c]'> </h1>
                 <hr />
             </div>
-            <div className="flex flex-wrap justify-center  cursor-pointer">
+            <div className="flex flex-wrap md:justify-between  justify-center cursor-pointer">
 
-                <div className='w-[70%] my-6 flex flex-wrap justify-start gap-2 md:gap-10 '>
+                <div className='md:w-[70%] w-full my-6 flex flex-wrap md:justify-start justify-center mx-auto gap-2 md:gap-10 '>
                     {
-                        newsdata?.articles.slice(8, 12).map((article, index) => (
+                        newsdata?.articles?.slice(8, 12).map((article, index) => (
 
                             <div key={index} className='flex flex-col my-5  p-2 max-w-80 cursor-pointer '>
                                 <div className='w-full h-[200px] bg-black flex items-center justify-center'>
@@ -53,9 +53,9 @@ const Googlenews = () => {
 
 
                 </div>
-
-                <Historical />
-
+                <div className="flex flex-col w-[300px] ">
+                    <Historical />
+                </div>
             </div>
         </>
 
