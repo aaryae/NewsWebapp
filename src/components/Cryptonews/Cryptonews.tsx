@@ -9,7 +9,7 @@ const Cryptonews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/everything?q=money&from=2024-04-20&sortBy=publishedAt&apiKey=227258dc557c446eb1ba568efbdff663`)
+                const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-04-22&sortBy=publishedAt&apiKey=f27fae2f13d64900a2b044ba7f436607`)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {

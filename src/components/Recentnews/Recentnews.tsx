@@ -4,6 +4,7 @@ import { NewsInterface } from "types/global.type"
 
 const Recentnews = () => {
     const [newsdata, setnewsdata] = useState<NewsInterface>()
+    const [showdata, setshowdata] = useState<boolean>(false)
 
     useEffect(() => {
         const fetchdata = async () => {
@@ -18,6 +19,9 @@ const Recentnews = () => {
         fetchdata()
     }, [])
 
+    const handlelist = () => (
+        setshowdata((prevshowdata) => !prevshowdata)
+    )
     return (
         <>
             <div>
@@ -48,8 +52,17 @@ const Recentnews = () => {
                             </div>
                         </div>
                     ))}
+                    {showdata && <div className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer'>
+                        <div className='w-[10rem] h-[8rem] bg-black flex items-center justify-center'>
+                            <img src={newsdata?.articles[6]?.urlToImage ?? fallback} alt="img" className="object-cover w-[10rem] h-[8rem]" />
+                        </div>
+                        <div>
+                            <h1 className="font-bold">{newsdata?.articles[9]?.title}</h1>
+                            <p>- {newsdata?.articles[9]?.author} </p>
+                        </div>
+                    </div>}
                     <div className="text-center">
-                        <button className="border border-white bg-[#26806c] text-white py-4 px-10 hover:bg-[#175a4c] tracking-widest">Load More</button>
+                        <button onClick={handlelist} className="border border-white bg-[#26806c] text-white py-4 px-10 hover:bg-[#175a4c] tracking-widest">Load More</button>
                     </div>
                 </div>
 

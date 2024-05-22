@@ -37,7 +37,7 @@ const Herosection = () => {
             }}
           />
           <div
-            className="smallbox1 text-2xl p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline"
+            className="smallbox1 text-2xl p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl "
             style={{
               textShadow: "rgb(83 112 225 / 54%) 3px 3px 20px, rgb(255 255 255 / 0%) -2px 1px 30px",
             }}

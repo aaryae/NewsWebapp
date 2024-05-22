@@ -10,7 +10,7 @@ const Googlenews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/everything?q=google&from=2024-04-20&sortBy=publishedAt&apiKey=fb6e45d574924ffca24c02b0d8fd3798`)
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=f27fae2f13d64900a2b044ba7f436607`)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
@@ -33,7 +33,7 @@ const Googlenews = () => {
 
                 <div className='md:w-[70%] w-full my-6 flex flex-wrap md:justify-start justify-center mx-auto gap-2 md:gap-10 '>
                     {
-                        newsdata?.articles?.slice(8, 12).map((article, index) => (
+                        newsdata?.articles?.slice(0, 4).map((article, index) => (
 
                             <div key={index} className='flex flex-col my-5  p-2 max-w-80 cursor-pointer '>
                                 <div className='w-full h-[200px] bg-black flex items-center justify-center'>
