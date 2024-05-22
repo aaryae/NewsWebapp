@@ -43,9 +43,7 @@ const Recentnews = () => {
                 <div className='w-1/2 my-6'>
                     {newsdata?.articles.slice(16, 19).map((article, index) => (
                         <div key={index} className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer'>
-                            <div className='w-[10rem] h-[8rem] bg-black flex items-center justify-center'>
-                                <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-[10rem] h-[8rem]" />
-                            </div>
+                            <img src={article.urlToImage ?? fallback} alt="img" className="object-cover h-[7rem] w-[10rem]" />
                             <div>
                                 <h1 className="font-bold">{article.title}</h1>
                                 <p>- {article.author} </p>
@@ -53,9 +51,8 @@ const Recentnews = () => {
                         </div>
                     ))}
                     {showdata && <div className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer'>
-                        <div className='w-[10rem] h-[8rem] bg-black flex items-center justify-center'>
-                            <img src={newsdata?.articles[6]?.urlToImage ?? fallback} alt="img" className="object-cover w-[10rem] h-[8rem]" />
-                        </div>
+                        <img src={newsdata?.articles[6]?.urlToImage ?? fallback} alt="img" className="object-cover h-[7rem] w-[10rem]" />
+
                         <div>
                             <h1 className="font-bold">{newsdata?.articles[9]?.title}</h1>
                             <p>- {newsdata?.articles[9]?.author} </p>

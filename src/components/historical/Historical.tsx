@@ -35,10 +35,9 @@ const Historical = () => {
             <div className=' my-6  '>
                 {
                     newsdata?.articles?.slice(3, 6).map((articles, value) => (
-                        <div key={value} className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer '>
-                            <div className='w-40 h-28 bg-black flex items-center justify-center '>
-                                <img src={articles?.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
-                            </div>
+                        <div key={value} className='flex justify-center items-center gap-10 mb-5 flex-wrap  cursor-pointer '>
+                            <img src={articles?.urlToImage ?? fallback} alt="img" className="object-cover h-full w-full" />
+
 
                             <div>
                                 <h1 className="font-bold">{articles?.title} </h1>
