@@ -10,7 +10,7 @@ const Googlenews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=227258dc557c446eb1ba568efbdff663`)
+                const response = await fetch(`  https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=food  `)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
@@ -33,17 +33,17 @@ const Googlenews = () => {
 
                 <div className='md:w-[70%] w-full my-6 flex flex-wrap md:justify-start justify-center mx-auto gap-2 md:gap-10 '>
                     {
-                        newsdata?.articles?.slice(0, 4).map((article, index) => (
+                        newsdata?.results?.slice(0, 4).map((article, index) => (
 
                             <div key={index} className='flex flex-col my-5  p-2 max-w-80 cursor-pointer '>
                                 <div className='w-full h-[200px] bg-black flex items-center justify-center'>
-                                    <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
+                                    <img src={article.image_url ?? fallback} alt="img" className="object-cover w-full h-full" />
                                 </div>
 
 
                                 <div  >
                                     <h1 className="font-bold">{article.title}</h1>
-                                    <p className="my-2 font-light">{article.source?.name} <br /> {article.publishedAt.split("T")[0]}</p>
+                                    <p className="my-2 font-light">{article.creator} <br /> {article.content}</p>
                                     <p className="text-justify font-light w-fit">{article.description?.substring(0, 100)}....</p>
                                 </div>
                             </div>

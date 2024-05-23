@@ -11,7 +11,9 @@ const Historical = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=227258dc557c446eb1ba568efbdff663`)
+                const response = await fetch(`
+                https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=politics
+                `)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
@@ -34,14 +36,14 @@ const Historical = () => {
             </div>
             <div className=' my-6  '>
                 {
-                    newsdata?.articles?.slice(3, 6).map((articles, value) => (
+                    newsdata?.results?.slice(3, 6).map((articles, value) => (
                         <div key={value} className='flex justify-center items-center gap-10 mb-5 flex-wrap  cursor-pointer '>
-                            <img src={articles?.urlToImage ?? fallback} alt="img" className="object-cover h-full w-full" />
+                            <img src={articles?.image_url ?? fallback} alt="img" className="object-cover h-full w-full" />
 
 
                             <div>
                                 <h1 className="font-bold">{articles?.title} </h1>
-                                <p>source: {articles?.publishedAt}</p>
+                                <p>source: {articles?.country}</p>
                             </div>
 
                         </div>
@@ -53,12 +55,12 @@ const Historical = () => {
             {showdata &&
                 <div className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer '>
                     <div className='w-40 h-28 bg-black flex items-center justify-center '>
-                        <img src={newsdata?.articles[1]?.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
+                        <img src={newsdata?.results[1]?.image_url ?? fallback} alt="img" className="object-cover w-full h-full" />
                     </div>
 
                     <div>
-                        <h1 className="font-bold">{newsdata?.articles[6]?.title} </h1>
-                        <p>source: {newsdata?.articles[1]?.publishedAt}</p>
+                        <h1 className="font-bold">{newsdata?.results[6]?.title} </h1>
+                        <p>source: {newsdata?.results[1]?.creator}</p>
                     </div>
 
                 </div>

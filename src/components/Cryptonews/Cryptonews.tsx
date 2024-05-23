@@ -9,7 +9,8 @@ const Cryptonews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=227258dc557c446eb1ba568efbdff663`)
+                const response = await fetch(`https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=politics
+                `)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
@@ -28,21 +29,22 @@ const Cryptonews = () => {
             </div>
             <div className="flex flex-wrap justify-center  md:justify-between">
 
-                {newsdata?.articles?.slice(3, 6)?.map((article, index) => (
-                    <div key={index} className='flex flex-col my-5  p-2 w-80 cursor-pointer '>
-                        <div className='w-full h-[200px] bg-black flex items-center justify-center'>
-                            <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
+                {
+                    newsdata?.results?.slice(0, 3).map((article, index) => (
+                        <div key={index} className='flex flex-col my-5  p-2 w-80 cursor-pointer '>
+                            <div className='w-full h-[200px] bg-black flex items-center justify-center'>
+                                <img src={article.image_url ?? fallback} alt="img" className="object-cover w-full h-full" />
+                            </div>
+
+
+                            <div>
+                                <h1 className="font-bold">{article.title}</h1>
+                                <p className="my-2 font-light">{article.content} <br /> {article.country}</p>
+                                <p className="text-justify font-light">{article.description?.substring(0, 100)}....</p>
+                            </div>
                         </div>
 
-
-                        <div>
-                            <h1 className="font-bold">{article.title}</h1>
-                            <p className="my-2 font-light">{article.source?.name} <br /> {article.publishedAt}</p>
-                            <p className="text-justify font-light">{article.description?.substring(0, 100)}....</p>
-                        </div>
-                    </div>
-
-                ))}
+                    ))}
 
 
             </div>

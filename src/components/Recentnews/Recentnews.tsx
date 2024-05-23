@@ -9,8 +9,11 @@ const Recentnews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=227258dc557c446eb1ba568efbdff663`)
+                const response = await fetch(`
+                https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=politics
+                `)
                 const data: NewsInterface = await response.json()
+
                 setnewsdata(data)
             } catch (error) {
                 console.log(error)
@@ -33,29 +36,30 @@ const Recentnews = () => {
                 <div className='my-6 w-1/2 group cursor-pointer'>
                     <div className='w-fit'>
                         <div className='w-full'>
-                            <img src={newsdata?.articles[1]?.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full " />
+                            <img src={newsdata?.results?.[1]?.image_url ?? fallback} alt="img" className="object-cover w-full h-full " />
                         </div>
-                        <h1 className='my-3 text-lg text-[#eb4b4b] group-hover:underline'>{newsdata?.articles[1]?.title}</h1>
-                        <p className='my-3'>- {newsdata?.articles[1]?.source?.name} <br />{newsdata?.articles[1]?.publishedAt}</p>
-                        <p className='text-justify'>{newsdata?.articles[1]?.description}</p>
+                        <h1 className='my-3 text-lg text-[#eb4b4b] group-hover:underline'>{newsdata?.results?.[1]?.title}</h1>
+                        <p className='my-3'>- {newsdata?.results?.[1]?.title} <br />{newsdata?.results?.[1]?.content}</p>
+                        <p className='text-justify'>{newsdata?.results?.[1]?.description}</p>
                     </div>
                 </div>
+
                 <div className='w-1/2 my-6'>
-                    {newsdata?.articles.slice(3, 6).map((article, index) => (
+                    {newsdata?.results.slice(3, 6).map((article, index) => (
                         <div key={index} className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer'>
-                            <img src={article.urlToImage ?? fallback} alt="img" className="object-cover h-[7rem] w-[10rem]" />
+                            <img src={article.image_url ?? fallback} alt="img" className="object-cover h-[7rem] w-[10rem]" />
                             <div>
                                 <h1 className="font-bold">{article.title}</h1>
-                                <p>- {article.source?.name} </p>
+                                <p>- {article.title} </p>
                             </div>
                         </div>
                     ))}
                     {showdata && <div className='flex justify-center items-center gap-10 mb-5 flex-wrap md:flex-nowrap cursor-pointer'>
-                        <img src={newsdata?.articles[6]?.urlToImage ?? fallback} alt="img" className="object-cover h-[7rem] w-[10rem]" />
+                        <img src={newsdata?.results[6]?.image_url ?? fallback} alt="img" className="object-cover h-[7rem] w-[10rem]" />
 
                         <div>
-                            <h1 className="font-bold">{newsdata?.articles[9]?.title}</h1>
-                            <p>- {newsdata?.articles[9]?.source?.name} </p>
+                            <h1 className="font-bold">{newsdata?.results[9]?.title}</h1>
+                            <p>- {newsdata?.results[9]?.title} </p>
                         </div>
                     </div>}
                     <div className="text-center">

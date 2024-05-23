@@ -10,10 +10,10 @@ const Herosection = () => {
     const fetchdata = async () => {
       try {
         const response = await fetch(`
-        https://newsapi.org/v2/top-headlines?country=us&apiKey=227258dc557c446eb1ba568efbdff663`)
+        https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=politics        `)
 
         const data: NewsInterface = await response.json();
-        console.log(data)
+
         setherodata(data)
 
       } catch (error) {
@@ -30,25 +30,25 @@ const Herosection = () => {
       <ErrorBoundary fallback={<div>something went wrong</div>}>
 
         <div className="box-1 group cursor-pointer" >
-          <a href={herodata?.articles[0]?.url}>
+          <a href={herodata?.results[0]?.source_url}>
             <img
-              src={herodata?.articles[0]?.urlToImage ?? fallback}
+              src={herodata?.results[0]?.image_url ?? fallback}
               alt="img"
               className="absolute inset-0 w-full h-full object-cover hover:blur-[2px] "
               style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
-                    rgba(0, 0, 0, 0.5)), url(${herodata?.articles[0]?.urlToImage ?? fallback})`,
+                    rgba(0, 0, 0, 0.5)), url(${herodata?.results[0]?.image_url ?? fallback})`,
               }}
             />
             <div
-              className="smallbox1 text-2xl p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl "
+              className="smallbox1 w-full text-2xl p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl "
               style={{
                 textShadow: "rgb(83 112 225 / 54%) 3px 3px 20px, rgb(255 255 255 / 0%) -2px 1px 30px",
               }}
             >
-              {herodata?.articles[5]?.title}
+              {herodata?.results[5]?.title}
               <div className="text-sm text-red-600">
-                - {herodata?.articles[5]?.source?.name}
+                - {herodata?.results[5]?.content}
               </div>
             </div>
           </a>
@@ -57,86 +57,86 @@ const Herosection = () => {
 
 
       <div className="box-2 cursor-pointer">
-        <a href={herodata?.articles[8]?.url}>
-          <img src={herodata?.articles[8]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover hover:blur-[2px]" />
+        <a href={herodata?.results[8]?.source_url}>
+          <img src={herodata?.results[8]?.image_url ?? fallback} alt="img" className="inset-0 w-full h-full object-cover hover:blur-[2px]" />
           <div
-            className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
+            className="smallbox1 w-full text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
             style={{
               textShadow: "rgb(83 112 225 / 54%) 3px 3px 20px, rgb(255 255 255 / 0%) -2px 1px 30px",
             }}
           >
-            {herodata?.articles[8]?.title}
+            {herodata?.results[8]?.title}
             <div className="text-sm text-red-600">
-              - {herodata?.articles[8]?.source?.name}
+              - {herodata?.results[8]?.content}
 
             </div>
           </div>
         </a>
       </div>
       <div className="box-3 cursor-pointer">
-        <a href={herodata?.articles[4]?.url}>
-          <img src={herodata?.articles[4]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
-          \<div
-            className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
+        <a href={herodata?.results[4]?.source_url}>
+          <img src={herodata?.results[4]?.image_url ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
+          <div
+            className="smallbox1 w-full text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
             style={{
               textShadow: "rgb(83 112 225 / 54%) 3px 3px 20px, rgb(255 255 255 / 0%) -2px 1px 30px",
             }}
           >
-            {herodata?.articles[4]?.title}
+            {herodata?.results[4]?.title}
             <div className="text-sm text-red-600">
-              - {herodata?.articles[4]?.source?.name}
+              - {herodata?.results[4]?.language}
 
             </div>
           </div>
         </a>
       </div>
       <div className="box-4 cursor-pointer">
-        <a href={herodata?.articles[3]?.url}>
+        <a href={herodata?.results[3]?.source_url}>
 
-          <img src={herodata?.articles[3]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
+          <img src={herodata?.results[3]?.image_url ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
           <div
-            className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
+            className="smallbox1 w-full text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
             style={{
               textShadow: "rgb(83 112 225 / 54%) 3px 3px 20px, rgb(255 255 255 / 0%) -2px 1px 30px",
             }}
           >
-            {herodata?.articles[3]?.title}
+            {herodata?.results[3]?.title}
             <div className="text-sm text-red-600">
-              - {herodata?.articles[3]?.source?.name}
+              - {herodata?.results[3]?.content}
 
             </div>
           </div>
         </a>
       </div>
       <div className="box-5 cursor-pointer">
-        <a href={herodata?.articles[6]?.url}>
-          <img src={herodata?.articles[6]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover hover:blur-[2px]" />
+        <a href={herodata?.results[6]?.source_url}>
+          <img src={herodata?.results[6]?.image_url ?? fallback} alt="img" className="inset-0 w-full h-full object-cover hover:blur-[2px]" />
           <div
-            className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
+            className="smallbox1 w-full text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
             style={{
               textShadow: "rgb(83 112 225 / 54%) 3px 3px 20px, rgb(255 255 255 / 0%) -2px 1px 30px",
             }}
           >
-            {herodata?.articles[6]?.title}
+            {herodata?.results[6]?.title}
             <div className="text-sm text-red-600">
-              - {herodata?.articles[6]?.source?.name}
+              - {herodata?.results[6]?.content}
 
             </div>
           </div>
         </a>
       </div>
       <div className="box-6 cursor-pointer">
-        <a href={herodata?.articles[5]?.url}>
-          <img src={herodata?.articles[5]?.urlToImage ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
+        <a href={herodata?.results[5]?.source_url}>
+          <img src={herodata?.results[5]?.image_url ?? fallback} alt="img" className="inset-0 w-full h-full object-cover  hover:blur-[2px]" />
           <div
-            className="smallbox1 text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
+            className="smallbox1 w-full text-sm p-3 text-[#ffffff] bg-[#00000088] absolute bottom-0 drop-shadow-2xl group-hover:underline "
             style={{
               textShadow: "rgb(83 112 225 / 54%) 3px 3px 20px, rgb(255 255 255 / 0%) -2px 1px 30px",
             }}
           >
-            {herodata?.articles[1]?.title}
+            {herodata?.results[1]?.title}
             <div className="text-sm text-red-600">
-              - {herodata?.articles[1]?.source?.name}
+              - {herodata?.results[1]?.content}
 
             </div>
           </div>
