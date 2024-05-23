@@ -35,8 +35,8 @@ const Recentnews = () => {
                         <div className='w-full'>
                             <img src={newsdata?.articles[1]?.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full " />
                         </div>
-                        <h1 className='my-3 text-lg text-[#eb4b4b] group-hover:underline'>{newsdata?.articles[18]?.title}</h1>
-                        <p className='my-3'>- {newsdata?.articles[1]?.source?.name} <br />{newsdata?.articles[18]?.publishedAt}</p>
+                        <h1 className='my-3 text-lg text-[#eb4b4b] group-hover:underline'>{newsdata?.articles[1]?.title}</h1>
+                        <p className='my-3'>- {newsdata?.articles[1]?.source?.name} <br />{newsdata?.articles[1]?.publishedAt}</p>
                         <p className='text-justify'>{newsdata?.articles[1]?.description}</p>
                     </div>
                 </div>
