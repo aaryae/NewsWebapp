@@ -16,6 +16,8 @@ export interface NewsInterface {
   }[];
 }
 
+
+
 export interface ForexInterface{
   conversion_rates: {
     [key: string]: number;

@@ -1,4 +1,4 @@
-import fallback from "assets/fallback/fallback-image.png"
+import fallback from "@assets/fallback/fallback-image.png"
 import { useEffect, useState } from "react"
 import { NewsInterface } from "types/global.type"
 
@@ -9,7 +9,7 @@ const Cryptonews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-04-22&sortBy=publishedAt&apiKey=f27fae2f13d64900a2b044ba7f436607`)
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=227258dc557c446eb1ba568efbdff663`)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
@@ -28,7 +28,7 @@ const Cryptonews = () => {
             </div>
             <div className="flex flex-wrap justify-center  md:justify-between">
 
-                {newsdata?.articles?.slice(0, 3)?.map((article, index) => (
+                {newsdata?.articles?.slice(3, 6)?.map((article, index) => (
                     <div key={index} className='flex flex-col my-5  p-2 w-80 cursor-pointer '>
                         <div className='w-full h-[200px] bg-black flex items-center justify-center'>
                             <img src={article.urlToImage ?? fallback} alt="img" className="object-cover w-full h-full" />
@@ -37,7 +37,7 @@ const Cryptonews = () => {
 
                         <div>
                             <h1 className="font-bold">{article.title}</h1>
-                            <p className="my-2 font-light">{article.author} <br /> {article.publishedAt}</p>
+                            <p className="my-2 font-light">{article.source?.name} <br /> {article.publishedAt}</p>
                             <p className="text-justify font-light">{article.description?.substring(0, 100)}....</p>
                         </div>
                     </div>

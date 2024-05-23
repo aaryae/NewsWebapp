@@ -11,7 +11,7 @@ const Historical = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`https://newsapi.org/v2/everything?domains=wsj.com&apiKey=f27fae2f13d64900a2b044ba7f436607`)
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=227258dc557c446eb1ba568efbdff663`)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
