@@ -11,7 +11,6 @@ export interface NewsInterface {
     video_url: string | null;
     description: string;
     content: string;
-    pubDate: string;
     image_url: string;
     source_id: string;
     source_priority: number;
@@ -20,11 +19,7 @@ export interface NewsInterface {
     language: string;
     country: string[];
     category?: string[];
-    ai_tag?: string;
-    sentiment?: string;
-    sentiment_stats?: string;
-    ai_region?: string;
-    ai_org?: string;
+    
   }[];
 }
 

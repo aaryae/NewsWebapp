@@ -9,10 +9,10 @@ const Herosection = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await fetch(`
-        https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=politics        `)
-
+        const response = await fetch(`${import.meta.env.VITE_API_URL}${import.meta.env.VITE_API_KEY}&language=en&category=politics `)
+        // https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=politics  
         const data: NewsInterface = await response.json();
+        console.log(data)
 
         setherodata(data)
 

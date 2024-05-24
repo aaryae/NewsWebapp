@@ -10,7 +10,7 @@ const Googlenews = () => {
     useEffect(() => {
         const fetchdata = async () => {
             try {
-                const response = await fetch(`  https://newsdata.io/api/1/news?apikey=pub_4169590e0811ce5d97f5fefab6ae1fa424b3d&language=en&category=food  `)
+                const response = await fetch(`${import.meta.env.VITE_API_URL}${import.meta.env.VITE_API_KEY}&language=en&category=food`)
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
