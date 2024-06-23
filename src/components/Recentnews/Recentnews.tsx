@@ -10,7 +10,9 @@ const Recentnews = () => {
         const fetchdata = async () => {
             try {
                 const response = await fetch(`${import.meta.env.VITE_API_URL}${import.meta.env.VITE_API_KEY}&language=en&category=politics `)
-
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                  }
                 const data: NewsInterface = await response.json()
 
                 setnewsdata(data)

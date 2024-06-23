@@ -11,6 +11,9 @@ const Googlenews = () => {
         const fetchdata = async () => {
             try {
                 const response = await fetch(`${import.meta.env.VITE_API_URL}${import.meta.env.VITE_API_KEY}&language=en&category=food`)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                  }
                 const data: NewsInterface = await response.json()
                 setnewsdata(data)
             } catch (error) {
